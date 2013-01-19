@@ -6,45 +6,45 @@ package org.siscemu.util;
  *
  */
 public class Range implements Comparable<Range> {
-	private long from;
-	private long to;
+	private int from;
+	private int to;
 	
 	public Range() {
 	}
 	
-	public Range(long from, long to) {
+	public Range(int from, int to) {
 		this.from(from).to(to);
 	}
 	
-	public long from() {
+	public int from() {
 		return from;
 	}
-	public Range from(long from) {
+	public Range from(int from) {
 		this.from = from;
 		return this;
 	}
 	
-	public long to() {
+	public int to() {
 		return to;
 	}
-	public Range to(long to) {
+	public Range to(int to) {
 		this.to = to;
 		return this;
 	}
 	
-	public Range forward(long size) {
+	public Range forward(int size) {
 		return to(from() + size);
 	}
 	
-	public Range backward(long size) {
+	public Range backward(int size) {
 		return from(to() - size);
 	}
 	
-	public long size() {
+	public int size() {
 		return to() - from();
 	}
 
-	public boolean contains(long v) {
+	public boolean contains(int v) {
 		return from() <= v && v < to();
 	}
 	
@@ -60,7 +60,7 @@ public class Range implements Comparable<Range> {
 	
 	@Override
 	public int hashCode() {
-		return ((int) from()) + Integer.reverseBytes((int) to());
+		return from() + Integer.reverseBytes(to());
 	}
 	
 	@Override
