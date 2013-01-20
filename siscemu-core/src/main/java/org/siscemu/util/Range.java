@@ -48,6 +48,10 @@ public class Range implements Comparable<Range> {
 		return from() <= v && v < to();
 	}
 	
+	public int offsetOf(int v) {
+		return v - from();
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if(obj == this)
