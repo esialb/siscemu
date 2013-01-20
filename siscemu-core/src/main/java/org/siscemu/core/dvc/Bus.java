@@ -20,6 +20,14 @@ public class Bus implements Memory {
 		devices.put(address, device);
 	}
 	
+	public TreeMap<Integer, Memory> getDevices() {
+		return devices;
+	}
+	
+	public void setDevices(TreeMap<Integer, Memory> devices) {
+		this.devices = devices;
+	}
+	
 	protected Memory deviceForAddress(int address) {
 		return devices.floorEntry(address).getValue();
 	}
